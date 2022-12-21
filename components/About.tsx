@@ -10,8 +10,8 @@ const About = () => {
                 <Typography className="text-center text-white font-bold text-2xl py-4">About Me</Typography>
                 <Typography className="text-center text-white text-xl lg:px-44 pb-2">
                     Since beginning my journey as a technology enthusiast nearly 7 years ago,i have studied a lot of programming
-                    languages like C, C++, VB, PHP and I've worked on some projects for educational purposes,
-                    and collaborated with talented people to reallife systems for both business and individual use.
+                    languages like C, C++, VB, PHP and I have worked on some projects for educational purposes,
+                    and collaborated with talented people to real-life systems for both business and individual use.
                     I believe in continous learning and adapting to new things to keep being relevant.
                 </Typography>
             </div>
