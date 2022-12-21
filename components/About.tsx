@@ -12,26 +12,38 @@ const About = () => {
                     Since beginning my journey as a technology enthusiast nearly 7 years ago,i have studied a lot of programming
                     languages like C, C++, VB, PHP and I have worked on some projects for educational purposes,
                     and collaborated with talented people to real-life systems for both business and individual use.
-                    I believe in continous learning and adapting to new things to keep being relevant.
+                    I believe in continuous learning and adapting to new things to keep being relevant.
                 </Typography>
             </div>
             <div className="lg:absolute bg-secondary lg:w-10/12 flex flex-col lg:flex-row rounded-xl shadow-lg lg:-bottom-80 lg:left-20 lg:mx-12 lg:my-32 lg:py-2">
                 <div className="flex flex-col lg:w-1/3 text-center items-center">
                     <Icon icon="bi:code-slash" color="#0fa958" height="24" className="my-2" />
                     <Typography className="text-lg font-bold my-2">
-                        Software Development
+                        Back-end
                     </Typography>
                     <Typography className="text-lg text-primary font-bold">
                         Languages
                     </Typography>
                     <Typography className="text-md my-1">
-                        Javascript, PHP,  Django
+                         NodeJs,  Django, PHP
                     </Typography>
-                    <Typography className="text-lg text-primary font-bold">
-                        Dev Tools
+                    <Typography className="text-lg text-primary font-bold my-2">
+                        Databases
+                    </Typography>
+                    <Typography>
+                        MongoDB, MySQL, PostgresSQL
+                    </Typography>
+                    <Typography className="text-lg text-primary font-bold my-2">
+                        Servers
+                    </Typography>
+                    <Typography>
+                        Apache
+                    </Typography>
+                    <Typography className="text-lg text-primary font-bold my-2">
+                        Development Tools
                     </Typography>
                     <Typography className="text-md my-1">
-                        VS Code, Atom
+                        VS Code, Webstorm, Postman, Git
                     </Typography>
                     <Typography className="text-md my-1">
                         Github
@@ -49,21 +61,33 @@ const About = () => {
                         Languages
                     </Typography>
                     <Typography className="text-md my-1">
-                        HTML, CSS
+                        HTML5, JavaScript, TypeScript
                     </Typography>
                     <Typography className="text-lg text-primary font-bold">
-                        Dev Tools
+                        Frameworks
                     </Typography>
                     <Typography className="text-md my-1">
-                        VS Code, Atom
+                        React, Next, Redux
                     </Typography>
-                    <Typography className="text-md ">
+                    <Typography className="text-lg text-primary font-bold">
+                        Styling
+                    </Typography>
+                    <Typography className="text-md my-1">
+                        styled-components, Tailwind CSS, Bootstrap
+                    </Typography>
+                    <Typography className="text-lg text-primary font-bold">
+                        Development Tools
+                    </Typography>
+                    <Typography className="text-md my-1">
+                        VS Code, Webstorm, Git
+                    </Typography>
+                    <Typography className="text-md my-1">
                         Github
                     </Typography>
-                    <Typography className="text-md ">
+                    <Typography className="text-md my-1">
                         Terminal
                     </Typography>
-                    <Typography className="text-md ">
+                    <Typography className="text-md my-1">
                         Bootstrap
                     </Typography>
                 </div>
@@ -76,7 +100,7 @@ const About = () => {
                         What i design
                     </Typography>
                     <Typography className="text-md my-1">
-                        UI, Web and Mobile
+                        UI for Web and Mobile
                     </Typography>
                     <Typography className="text-lg text-primary font-bold">
                         Design Tools
