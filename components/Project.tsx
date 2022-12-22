@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
 import Card from './Card'
 import Json from '../utils/projects.json'
+interface myJson {
+    id: number;
+    title: string;
+    description: string;
+}
 
 const Project = () => {
-    const [cardData, setCardData] = useState([]);
+    const [cardData, setCardData] = useState<myJson[]>([]);
     useEffect(() => {
         setCardData(Json);
     }, []);
@@ -13,7 +18,7 @@ const Project = () => {
                 cardData.map((card, index) =>
                    {
                         return (
-                            <Card key={index} title={card.title} description={card.description} /> 
+                            <Card key={index} title={card.title} description={card.description} />
                         )
                    })                
             }

@@ -1,8 +1,14 @@
 import Image from 'next/image';
+interface imageTypes {
+    src: string,
+    width: string,
+    height: string,
+    styles: string,
+}
 
-const Img = ({ src, width, height, styles }) => {
+const Img = (props: imageTypes) => {
     const myLoader = () => {
-        return `${src}`
+        return `${props.src}`
       }
     
     return (
@@ -10,9 +16,9 @@ const Img = ({ src, width, height, styles }) => {
             loader={myLoader}
             src="DSC_4718.JPG"
             alt="Picture of the author"
-            width={width}
-            height={height}
-            className={styles}
+            width={props.width}
+            height={props.height}
+            className={props.styles}
         />
     )
 }
