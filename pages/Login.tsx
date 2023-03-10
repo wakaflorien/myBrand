@@ -5,11 +5,11 @@ import { Typography, Breadcrumbs, Button, Input } from "@material-tailwind/react
 import { Icon } from "@iconify/react";
 const Login = () => {
     return (
-        <main>
+        <main className="bg-secondary">
             <Nav />
             <Breadcrumbs 
             fullWidth={true}
-            className="lg:pl-40 cursor-pointer py-1.5 lg:py-20 font-bold text-primary text-md lg:text-2xl bg-white">
+            className="lg:pl-40 cursor-pointer py-1.5 lg:py-20 font-bold text-primary text-md lg:text-2xl bg-secondary">
                 <Link href="/" className="opacity-60">
                     <Icon icon="ant-design:home-filled" color="#000" height="24" />
                 </Link>
