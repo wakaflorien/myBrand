@@ -9,7 +9,6 @@ import Nav from "../../components/Nav";
 const SingleProject = () => {
   const router = useRouter();
   const { project_id, title } = router.query;
-  console.log(router.query);
   return (
     <>
       <Nav />
@@ -49,7 +48,8 @@ const SingleProject = () => {
           August 16, 2022
         </Typography>
         <Typography
-          className="p-1 lg:py-8 font-normal text-md lg:text-lg "
+          className="p-1 lg:py-8 font-normal text-md lg:text-lg"
+          color="blue-gray"
           variant="paragraph"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum

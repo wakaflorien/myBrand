@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogBody,
   DialogFooter,
+  Input, Checkbox, Textarea, Select, Option
 } from "@material-tailwind/react";
 import { useState } from "react";
 
@@ -29,26 +30,40 @@ const Footer = () => {
           unmount: { scale: 0.9, y: -100 },
         }}
       >
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader className='flex items-center justify-center'>I’m excited to learn about your project. Ready to get started?</DialogHeader>
         <DialogBody divider>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
-          reprehenderit omnis perspiciatis aut odit! Unde architecto
-          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
-          praesentium magni corrupti explicabo!
+          <form className="mt-8 mb-2 w-full">
+            <div className="flex flex-row gap-6 ">
+              <Input size="lg" label="Name" />
+              <Input size="lg" label="Email" />
+            </div>
+            <div className="flex flex-row gap-6 mt-10">
+              <Select variant="standard" label="Type of project">
+                <Option>Responsive design</Option>
+                <Option>Web app</Option>
+                <Option>Mobile app</Option>
+                <Option>APIs development</Option>
+                <Option>Integration</Option>
+              </Select>
+              <Select variant="standard" label="Budget">
+                <Option>$200 - 300</Option>
+                <Option>$300 - 500</Option>
+                <Option>$500 - 1000 </Option>
+              </Select>
+            </div>
+            <div className="mt-10">
+              <Textarea size='lg' label="Message" />
+            </div>
+            <div className="flex flex-col">
+              <Checkbox
+                  label="I agree the
+                          &nbsp;Terms and Conditions" />
+              <Button className="mt-6 rounded-full" size='lg' variant='outlined' >
+                Submit
+              </Button>
+            </div>
+          </form>
         </DialogBody>
-        <DialogFooter>
-          <Button
-            variant="text"
-            color="red"
-            onClick={handleOpen}
-            className="mr-1"
-          >
-            <span>Close</span>
-          </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
-            <span>Confirm</span>
-          </Button>
-        </DialogFooter>
       </Dialog>
 
       <div
@@ -65,7 +80,7 @@ const Footer = () => {
           Tel: +250786461106
         </Typography>
         <Tooltip
-          content="Click here to buy me a coffee"
+          content="Interested in working together? let's chat over a coffee"
           className="bg-transparent text-white text-md font-bold"
           placement="bottom"
           animate={{
@@ -81,6 +96,9 @@ const Footer = () => {
             fullWidth
           >
             <Icon icon="ic:baseline-coffee" height="24" className="" />
+            <Typography className="text-center text-sm lg:text-md lowercase" variant="h2">
+              let &apos; s do this
+            </Typography>
           </Button>
         </Tooltip>
         <Typography className="text-center text-white text-md lg:text-lg pt-8">
