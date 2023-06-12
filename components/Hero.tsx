@@ -27,7 +27,7 @@ const Hero = () => {
         <Typography className="text-black font-bold text-xl py-2 text-center">
           Web, Software Developer/Designer
         </Typography>
-        <Typography className="text-center text-xl">
+        <Typography className="text-black text-center text-xl">
           I’m a software/web developer who is passionate about creating
           interactive web, android applications and helping users interact with
           different technologies at the highest level.

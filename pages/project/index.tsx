@@ -54,6 +54,7 @@ const Projects = () => {
             />
 
             <Typography
+              type="paragraph"
               variant="medium"
               color="blue-gray"
               className="p-1 lg:mt-8 font-normal text-md lg:text-lg "

@@ -79,7 +79,7 @@ const Nav = () => {
           variant="small"
           className="mr-4 lg:mr-48 lg:ml-8 cursor-pointer py-1.5 font-bold text-primary text-md lg:text-2xl"
         >
-          <span>Waka Florien.</span>
+          <span>Florien Niyongabo.</span>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <Button
