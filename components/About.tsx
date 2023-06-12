@@ -112,7 +112,7 @@ const About = () => {
               What i design
             </Typography>
             <Typography className="text-md text-black my-1">
-              UI/UX for Web and Mobiless
+              UI/UX for Web and Mobile
             </Typography>
             <Typography className="text-lg text-primary font-bold">
               Design Tools
