@@ -5,6 +5,7 @@ interface cardProps {
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
 const Card = (props: cardProps) => {
@@ -13,15 +14,20 @@ const Card = (props: cardProps) => {
       <div className="p-4 lg:w-1/4">
         <Img
           src={props.image}
-          width="400"
-          height="400"
-          styles="rounded-md shadow-md"
+          width="200"
+          height="200"
+          styles="rounded-md shadow-md hover:scale-110 transition-all ease-in-out duration-300"
         />
       </div>
       <div className="font-lato py-4 lg:w-3/4 ml-4">
-        <h1 className="text-primary text-sm lg:text-2xl font-bold">
-          {props.title}
-        </h1>
+        <div className="flex items-center space-x-2 text-primary">
+          <h1 className="text-sm lg:text-2xl font-bold">
+            {props.title}
+          </h1>
+          <a href={props.link} target="_blank" rel="noreferrer">
+            <Icon icon="iconamoon:link-bold" className="-rotate-45" height="22" />
+          </a>
+        </div>
 
         <Typography
           variant="medium"

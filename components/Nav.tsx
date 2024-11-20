@@ -82,14 +82,7 @@ const Nav = () => {
           <span>Florien Niyongabo.</span>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <Button
-          variant="gradient"
-          size="sm"
-          color="green"
-          className="hidden lg:inline-block"
-        >
-          <Link href="/Login">Login</Link>
-        </Button>
+        
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -130,15 +123,6 @@ const Nav = () => {
       </div>
       <MobileNav open={openNav}>
         {navList}
-        <Button
-          variant="gradient"
-          size="sm"
-          fullWidth
-          color="green"
-          className="mb-2"
-        >
-          <span className="">Login</span>
-        </Button>
       </MobileNav>
     </Navbar>
   );

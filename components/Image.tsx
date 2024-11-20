@@ -14,7 +14,7 @@ const Img = (props: imageTypes) => {
     return (
         <Image 
             loader={myLoader}
-            src="DSC_4718.JPG"
+            src={props.src}
             alt="Picture of the author"
             width={props.width}
             height={props.height}

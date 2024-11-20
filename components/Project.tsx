@@ -8,6 +8,7 @@ interface myJson {
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
 const Project = () => {
@@ -34,6 +35,7 @@ const Project = () => {
               title={card.title}
               description={card.description}
               image={card.image}
+              link={card.link}
             />
           );
         })}

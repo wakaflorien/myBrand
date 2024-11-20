@@ -1,20 +1,23 @@
 [
   {
+    "id": 0,
+    "title": "Camper coffee website",
+    "description": "A single page app for a coffee shop built using html and css.",
+    "link": "https://campercoffee.netlify.app/",
+    "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
+  },
+  {
     "id": 1,
-    "title": "Designer",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo officiis distinctio et eius. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.officiis distinctio et eius.",
+    "title": "Todo app",
+    "description": "A brief dashboard todo management web app app which uses below tools from React with JavaScript, Jest & React Testing Library for testing, Tailwind CSS for styling, Redux Tanstack query for API calls and State Management, React Router for routing and i18next for translation.",
+    "link": "https://todo-dash-iota.vercel.app/",
     "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
   },
   {
     "id": 2,
-    "title": "Patsy",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo officiis distinctio et eius. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo officiis distinctio et eius.",
-    "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
-  },
-  {
-    "id": 3,
-    "title": "Darleen",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo officiis distinctio et eius Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ipsum expedita quam, dignissimos illum repudiandae ducimus veritatis in laborum earum possimus provident! Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.Consequatur quis provident quo officiis distinctio et eius.",
+    "title": "My Portfolio",
+    "description": "My personal web application where you can breifly find my work over the years.",
+    "link": "https://my-brand-swart.vercel.app/",
     "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
   }
 ]
