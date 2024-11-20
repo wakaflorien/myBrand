@@ -49,36 +49,23 @@ const Post = () => {
           August 16, 2022
         </Typography>
         <Typography
-          className="p-1 font-normal text-md lg:text-lg lg:py-8"
+          className="p-1 font-normal text-black text-md lg:text-lg lg:py-8"
           variant="paragraph"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
           suspendisse phasellus enim nulla tortor dui. Massa dictumst massa ut
           sodales. Risus vitae fringilla sagittis lorem libero arcu at massa at.
-          Commodo id nec aenean sagittis a ultricies elementum leo. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Vestibulum suspendisse
-          phasellus enim nulla tortor dui. Massa dictumst massa ut sodales.
-          Risus vitae fringilla sagittis lorem libero arcu at massa at. Commodo
-          id nec aenean sagittis a ultricies elementum leo. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Vestibulum suspendisse
-          phasellus enim nulla tortor dui. Massa dictumst massa ut sodales.
-          Risus vitae fringilla sagittis lorem libero arcu at massa at. Commodo
-          id nec aenean sagittis a ultricies elementum leo. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Vestibulum suspendisse
-          phasellus enim nulla tortor dui. Massa dictumst massa ut sodales.
-          Risus vitae fringilla sagittis lorem libero arcu at massa at. Commodo
-          id nec aenean sagittis a ultricies elementum leo.
         </Typography>
         <div className="flex flex-col lg:py-2 lg:my-2 border-primary lg:w-1/3">
           <Textarea color="green" label="Write your comments" className="" />
           <Button color="green" className="my-2 lg:w-32">
             Comment
           </Button>
-          <Typography className="font-bold lg:py-4" variant="lead">
+          <Typography className="font-bold text-black lg:py-4" variant="lead">
             Latest comments here
           </Typography>
           <Typography
-            className="p-1 font-normal text-md lg:text-lg "
+            className="p-1 font-normal text-black text-md lg:text-lg "
             variant="small"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis

@@ -25,14 +25,6 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal text-md lg:text-lg"
       >
-        <Link href="/">Home</Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal text-md lg:text-lg"
-      >
         <Link href="/#about">About</Link>
       </Typography>
       <Typography
@@ -41,7 +33,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal text-md lg:text-lg"
       >
-        <Link href="/#skills">Skills</Link>
+        <Link href="/blog">Articles</Link>
       </Typography>
       <Typography
         as="li"
@@ -49,15 +41,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal text-md lg:text-lg"
       >
-        <Link href="/#portifolio">Portifolio</Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal text-md lg:text-lg"
-      >
-        <Link href="/blog">Blog</Link>
+        <Link href="/#portifolio">Projects</Link>
       </Typography>
       <Typography
         as="li"

@@ -22,7 +22,7 @@ const About = () => {
         </Typography>
         <div
           id="skills"
-          className="lg:absolute bg-secondary lg:w-10/12 flex flex-col lg:flex-row rounded-xl shadow-lg lg:-bottom-96 lg:left-20 lg:mx-12 lg:my-32 lg:py-2"
+          className="lg:absolute bg-secondary lg:w-10/12 flex flex-col lg:flex-row rounded-none lg:rounded-xl shadow-lg lg:-bottom-96 lg:left-20 lg:mx-12 lg:my-32 lg:py-2"
         >
           <div className="flex flex-col lg:w-1/3 text-center items-center">
             <Icon
@@ -46,20 +46,18 @@ const About = () => {
             <Typography className="text-md text-black my-1">
               MongoDB, MySQL, PostgresSQL
             </Typography>
+            
             <Typography className="text-lg text-primary font-bold my-2">
-              Servers
+              Development Tools / IDEs
             </Typography>
-            <Typography className="text-md text-black my-1">Apache</Typography>
-            <Typography className="text-lg text-primary font-bold my-2">
-              Development Tools
-            </Typography>
-            <Typography className="text-md my-1">
+            <Typography className="text-md text-black my-1">
               VS Code, Webstorm, Postman, Git
             </Typography>
-            <Typography className="text-md my-1">Github</Typography>
-            <Typography className="text-md my-1">Terminal</Typography>
+            <Typography className="text-md text-black my-1">Github</Typography>
+            <Typography className="text-md text-black my-1 pb-4 lg:pb-0">Terminal</Typography>
           </div>
-          <div className="flex flex-col lg:w-1/3 text-center items-center border-t-2 lg:border-t-0 border-b-2 lg:border-b-0 lg:border-l-2 lg:border-r-2">
+          
+          <div className="flex flex-col lg:w-1/3 text-center items-center border-primary border-t-2 lg:border-t-0 border-b-2 lg:border-b-0 lg:border-x">
             <Icon
               icon="bi:credit-card-2-front"
               color="#0fa958"
@@ -94,7 +92,7 @@ const About = () => {
               VS Code, Webstorm, Git
             </Typography>
             <Typography className="text-md text-black my-1">Github</Typography>
-            <Typography className="text-md text-black my-1">
+            <Typography className="text-md text-black my-1 pb-4 lg:pb-0">
               Terminal
             </Typography>
           </div>
@@ -117,11 +115,8 @@ const About = () => {
             <Typography className="text-lg text-primary font-bold">
               Design Tools
             </Typography>
-            <Typography className="text-md text-black my-1">
+            <Typography className="text-md text-black my-1 pb-4 lg:pb-0">
               Figma , FigJam
-            </Typography>
-            <Typography className="text-md text-black my-1">
-              Adobe Xd
             </Typography>
           </div>
         </div>

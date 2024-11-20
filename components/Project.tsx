@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 import Json from "../utils/projects.json";
-import { useRouter } from "next/router";
 import { Typography } from "@material-tailwind/react";
 interface myJson {
   id: number;
@@ -13,10 +12,10 @@ interface myJson {
 
 const Project = () => {
   const [cardData, setCardData] = useState<myJson[]>([]);
-  const router = useRouter();
   useEffect(() => {
     setCardData(Json);
   }, []);
+
   return (
     <>
       <div
@@ -24,27 +23,24 @@ const Project = () => {
         id="portifolio"
       >
         <div>
-          <Typography className="text-center text-primary font-bold text-2xl py-4">
+          <Typography className="text-center text-primary font-bold text-2xl py-8 lg:py-4">
             What i have worked on ?
           </Typography>
         </div>
         {cardData.map((card, index) => {
           return (
-            <Card
-              key={index}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              link={card.link}
-            />
+            <>
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                link={card.link}
+              />
+              {index !== cardData.length - 1 && <hr className="border-primary" />}
+            </>
           );
         })}
-        <span
-          onClick={() => router.push(`/project`)}
-          className="text-primary text-lg flex justify-start cursor-pointer font-bold font-lato px-8"
-        >
-          Read more ...
-        </span>
       </div>
     </>
   );

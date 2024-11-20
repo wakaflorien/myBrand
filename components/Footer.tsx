@@ -68,7 +68,7 @@ const Footer = () => {
 
       <div
         id="contact"
-        className="flex flex-col items-center justify-center bg-primary shadow-md lg:h-80"
+        className=" bg-primary  flex flex-col items-center justify-center space-y-2 lg:space-y-4 lg:h-80 w-full lg:w-11/12	mx-auto lg:rounded-xl lg:mb-12"
       >
         <Typography className="text-center text-white font-bold text-md lg:text-lg py-2">
           Contact Me
@@ -101,7 +101,7 @@ const Footer = () => {
             </Typography>
           </Button>
         </Tooltip>
-        <Typography className="text-center text-white text-md lg:text-lg pt-8">
+        <Typography className="text-center text-white text-md lg:text-lg py-4">
           Copyright Florien Niyongabo {currentYear()}
         </Typography>
       </div>
