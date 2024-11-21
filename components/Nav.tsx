@@ -47,7 +47,7 @@ const Nav = () => {
   );
 
   return (
-    <Navbar className="mx-auto bg-secondary shadow-none rounded-none   py-2 px-4 lg:px-32 lg:py-4 sticky top-0 z-40">
+    <Navbar className="mx-auto bg-secondary border-none shadow-sm rounded-none   py-2 px-4 lg:px-32 lg:py-4 sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="li"
@@ -68,7 +68,7 @@ const Nav = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              className="h-6 w-6"
+              className="h-6 w-6 text-primary"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
@@ -82,7 +82,7 @@ const Nav = () => {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 text-primary"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
@@ -96,7 +96,7 @@ const Nav = () => {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      <MobileNav open={openNav} className="bg-transparent">
         {navList}
       </MobileNav>
     </Navbar>

@@ -25,7 +25,7 @@ const Hero = () => {
           Software Engineer
         </Typography>
         <Typography className="text-black text-center text-xl">
-          I’m a software engineer passionate about building interactive web and mobile apps that empower users to engage with technology at its best.
+          I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at its best.
         </Typography>
       </div>
     </div>
