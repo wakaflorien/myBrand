@@ -1,23 +1,58 @@
 [
   {
     "id": 0,
-    "title": "Camper coffee website",
-    "description": "A single page app for a coffee shop built using html and css.",
-    "link": "https://campercoffee.netlify.app/",
-    "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
+    "title": "Fixa Admin panel",
+    "owner": "Fixa Ltd",
+    "summary": "A centralized web application for the management of a company's assets.",
+    "description": "This is a centralized web application designed to streamline the management of projects, workforce, and payments. It allows users to create, manage, and track projects efficiently, ensuring progress, deadlines, and deliverables are handled in a unified space. The platform also provides tools to oversee on-ground workers, manage their attendances, and their daily earnings, bonuses and deductions, offering clear visibility into workforce. Additionally, it simplifies financial management by enabling seamless payroll runs and tracking of payments, ensuring transparency and accuracy.",
+    "timeline": "June, 2022 - October, 2024",
+    "role": "Fullstack software Engineer",
+    "stack": "Nextjs, Redux, Ant design, Styled components, Tailwind CSS, Nodejs (Strapi), JavaScript, MYSQL, Redis, AWS",
+    "link": "https://fixahr.com/",
+    "repo": "https://github.com/fixaltd/admin_panel/",
+    "isPrivate": true,
+    "image": "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fadminpanel.png?alt=media&token=285051c1-c52d-48cb-a4a4-d000a013e4ce"
   },
   {
     "id": 1,
-    "title": "Todo app",
-    "description": "A brief dashboard todo management web app app which uses below tools from React with JavaScript, Jest & React Testing Library for testing, Tailwind CSS for styling, Redux Tanstack query for API calls and State Management, React Router for routing and i18next for translation.",
+    "title": "Dasboard To-Do Manager",
+    "owner": "Personal",
+    "summary": "A lightweight dashboard-based to-do management web app built with React and JavaScript.",
+    "description": "Dashboard To-Do Manager is a modern, lightweight web application designed to simplify task management. Built with React and JavaScript, the app provides an intuitive dashboard interface for users to organize, track, and manage their daily tasks efficiently. The application leverages advanced tools and technologies to deliver a robust and user-friendly experience. It uses Tailwind CSS for sleek and responsive styling, Redux and Tanstack Query for efficient state management and seamless API integration, and React Router to ensure smooth navigation. i18next is integrated to support multiple languages, making the app accessible to a diverse audience. High-quality testing is a priority, with Jest and React Testing Library ensuring reliability and bug-free performance. This project is ideal for anyone looking to manage their tasks effectively within a well-designed, scalable, and globally accessible platform.",
+    "timeline": "November, 2024",
+    "role": "Fullstack software Engineer",
+    "stack": "React, Javascript, Jest & React Testing Library, Tailwind CSS, Redux Tanstack query, React Router, i18next",
     "link": "https://todo-dash-iota.vercel.app/",
-    "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
+    "repo": "https://github.com/wakaflorien/todo-dash",
+    "isPrivate": false,
+    "image": "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Ftodo.png?alt=media&token=fd045a46-94ea-4638-afda-9d8de3bf7a75"
   },
   {
     "id": 2,
     "title": "My Portfolio",
-    "description": "My personal web application where you can breifly find my work over the years.",
+    "owner": "Personal",
+    "summary": "My personal portfolio web application showcases a concise overview of my work and accomplishments over the years.",
+    "description": "A sleek and modern personal portfolio web application built with Next.js, TypeScript, and Tailwind CSS. This platform provides a concise overview of my professional journey, showcasing my projects, skills, and accomplishments in a visually engaging and highly performant interface. Leveraging Next.js for server-side rendering and optimized performance, TypeScript for robust and maintainable code, and Tailwind CSS for responsive and clean design, this portfolio highlights my expertise while delivering a seamless user experience.",
+    "timeline": "Ongoing",
+    "role": "Frontend Engineer",
+    "stack": "React, Typescript, Material Tailwind, Tailwind CSS",
     "link": "https://my-brand-swart.vercel.app/",
-    "image": "https://fastly.picsum.photos/id/870/200/300.jpg?blur=2&grayscale&hmac=ujRymp644uYVjdKJM7kyLDSsrqNSMVRPnGU99cKl6Vs"
+    "repo": "https://github.com/wakaflorien/myBrand",
+    "isPrivate": false,
+    "image": "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fportifolio.png?alt=media&token=9562c380-1ba8-4302-855b-aa2d00dc160e"
+  },
+  {
+    "id": 3,
+    "title": "Camper coffee website",
+    "owner": "Camper Coffee",
+    "summary": "A single page web application for a coffee shop built using html and css.",
+    "description": "A responsive single-page web application for a coffee shop, created as part of the FreeCodeCamp Responsive Design course. Built using HTML and CSS, the project demonstrates essential design principles, including layout structuring, typography, and mobile-first responsiveness. The app provides a clean and visually appealing interface, showcasing the coffee shop's offerings while ensuring an optimal user experience across devices.",
+    "timeline": "November, 2024",
+    "role": "Frontend Engineer",
+    "stack": "HTML, CSS",
+    "link": "https://campercoffee.netlify.app/",
+    "repo": "https://github.com/wakaflorien/html-coffee-spa",
+    "isPrivate": false,
+    "image": "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fcoffee.png?alt=media&token=7f737f9f-6630-4c01-b306-bf08a9de03c9"
   }
 ]

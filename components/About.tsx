@@ -13,16 +13,11 @@ const About = () => {
           color="blue-gray"
           className="p-1 font-normal lg:text-xl text-center text-white text-xl lg:px-44 pb-2"
         >
-          Since beginning my journey as a technology enthusiast nearly 7 years
-          ago,i have studied a lot of programming languages like C, C++, VB, PHP
-          and I have worked on some projects for educational purposes, and
-          collaborated with talented people to real-life systems for both
-          business and individual use. I believe in continuous learning and
-          adapting to new things to keep being relevant.
+          Since beginning my journey as a technology enthusiast in 2014, I have delved into learning various programming languages and technologies, including JavaScript, Python, PHP, React, Django, Node.js, MongoDB, and more. Over the years, I have worked on numerous educational projects and collaborated with talented individuals to create real-world systems for businesses and individuals. I am passionate about continuous learning and embracing new technologies to remain relevant and make a meaningful impact in this ever-evolving field.
         </Typography>
         <div
           id="skills"
-          className="lg:absolute bg-secondary lg:w-10/12 flex flex-col lg:flex-row rounded-none lg:rounded-xl shadow-lg lg:-bottom-96 lg:left-20 lg:mx-12 lg:my-32 lg:py-2"
+          className="lg:absolute inset-x-0 mx-auto lg:my-4 lg:py-2 bg-secondary lg:w-10/12 flex flex-col lg:flex-row rounded-none lg:rounded-xl shadow-lg"
         >
           <div className="flex flex-col lg:w-1/3 text-center items-center">
             <Icon
@@ -46,7 +41,7 @@ const About = () => {
             <Typography className="text-md text-black my-1">
               MongoDB, MySQL, PostgresSQL
             </Typography>
-            
+
             <Typography className="text-lg text-primary font-bold my-2">
               Development Tools / IDEs
             </Typography>
@@ -56,7 +51,7 @@ const About = () => {
             <Typography className="text-md text-black my-1">Github</Typography>
             <Typography className="text-md text-black my-1 pb-4 lg:pb-0">Terminal</Typography>
           </div>
-          
+
           <div className="flex flex-col lg:w-1/3 text-center items-center border-primary border-t-2 lg:border-t-0 border-b-2 lg:border-b-0 lg:border-x">
             <Icon
               icon="bi:credit-card-2-front"

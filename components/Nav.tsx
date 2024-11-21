@@ -33,14 +33,6 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal text-md lg:text-lg"
       >
-        <Link href="/blog">Articles</Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal text-md lg:text-lg"
-      >
         <Link href="/#portifolio">Projects</Link>
       </Typography>
       <Typography
@@ -55,15 +47,14 @@ const Nav = () => {
   );
 
   return (
-    <Navbar className="mx-auto lg:rounded-none lg:rounded-b-md max-w-screen-3xl py-2 px-4 lg:px-8 lg:py-4 sticky top-0 z-40">
+    <Navbar className="mx-auto bg-secondary shadow-none rounded-none   py-2 px-4 lg:px-32 lg:py-4 sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
-          as="a"
-          href="#"
+          as="li"
           variant="small"
           className="mr-4 lg:mr-48 lg:ml-8 cursor-pointer py-1.5 font-bold text-primary text-md lg:text-2xl"
         >
-          <span>Florien Niyongabo.</span>
+          <Link href="/">Florien Niyongabo.</Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         
