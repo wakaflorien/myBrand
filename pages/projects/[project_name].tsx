@@ -59,7 +59,7 @@ const Blog = () => {
 
             </Typography>
             
-            <div className="w-full flex flex-col items-center justify-center lg:gap-8 lg:py-8">
+            <div className="w-full flex flex-col items-center justify-center gap-4 lg:gap-8 lg:py-8">
               <Img
                 src={item.image}
                 width="800"
@@ -91,22 +91,16 @@ const Blog = () => {
                   <strong>Timeline</strong>{" "}{":"}{" "} {item.timeline}
                 </Typography>
                 <Typography
-                  as="p"
-                  variant="small"
                   className="py-1.5 font-normal text-black text-md lg:text-lg"
                 >
                   <strong>Role</strong>{" "}{":"}{" "} {item.role}
                 </Typography>
                 <Typography
-                  as="p"
-                  variant="small"
                   className="py-1.5 font-normal text-black text-md lg:text-lg"
                 >
                   <strong>Stack</strong>{" "}{":"}{" "} {item.stack}
                 </Typography>
                 <Typography
-                  as="p"
-                  variant="small"
                   className="py-1.5 font-normal text-black text-md lg:text-lg"
                 >
                   <strong>Project description</strong>{" "}{":"}{" "} {item.description}

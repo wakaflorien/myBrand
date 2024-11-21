@@ -8,10 +8,7 @@ const About = () => {
         <Typography className="text-center text-white font-bold text-2xl py-4">
           About Me
         </Typography>
-        <Typography
-          variant="medium"
-          color="blue-gray"
-          className="p-1 font-normal lg:text-xl text-center text-white text-xl lg:px-44 pb-2"
+        <Typography className="p-1 font-thin lg:text-xl text-center text-white text-md lg:px-44 pb-2"
         >
           Since beginning my journey as a technology enthusiast in 2014, I have delved into learning various programming languages and technologies, including JavaScript, Python, PHP, React, Django, Node.js, MongoDB, and more. Over the years, I have worked on numerous educational projects and collaborated with talented individuals to create real-world systems for businesses and individuals. I am passionate about continuous learning and embracing new technologies to remain relevant and make a meaningful impact in this ever-evolving field.
         </Typography>
@@ -38,7 +35,7 @@ const About = () => {
             <Typography className="text-lg text-primary font-bold my-2">
               Databases
             </Typography>
-            <Typography className="text-md text-black my-1">
+            <Typography className="text-md font-thin text-black my-1">
               MongoDB, MySQL, PostgresSQL
             </Typography>
 
