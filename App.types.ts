@@ -12,3 +12,8 @@ export interface myJson {
     stack: string;
     repo: string
   }
+
+  export type ImgInterface = {
+    width: string;
+    height: string;
+  };

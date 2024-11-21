@@ -5,15 +5,15 @@ interface imageTypes {
     height: string,
     styles: string,
 }
+export const imageLoader = (src: string) => {
+    return `${src}`
+  }
 
 const Img = (props: imageTypes) => {
-    const myLoader = () => {
-        return `${props.src}`
-      }
     
     return (
         <Image 
-            loader={myLoader}
+            loader={() => imageLoader(props.src)}
             src={props.src}
             alt="Picture of the author"
             width={props.width}
