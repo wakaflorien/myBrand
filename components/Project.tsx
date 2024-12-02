@@ -15,11 +15,11 @@ const Project = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-between lg:mt-80 lg:mb-12 lg:mx-32"
+        className="flex flex-col justify-between"
         id="portifolio"
       >
         <div>
-          <Typography className="text-center text-primary font-bold text-2xl py-8 lg:py-4">
+          <Typography className="text-center text-black font-bold text-2xl py-8 lg:py-4">
             What i have worked on ?
           </Typography>
         </div>

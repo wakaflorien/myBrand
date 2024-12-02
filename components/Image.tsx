@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FC } from 'react';
 interface imageTypes {
     src: string,
     width: string,
@@ -7,18 +8,18 @@ interface imageTypes {
 }
 export const imageLoader = (src: string) => {
     return `${src}`
-  }
+}
 
-const Img = (props: imageTypes) => {
-    
+const Img: FC<imageTypes> = ({ src, width, height, styles }) => {
+
     return (
-        <Image 
-            loader={() => imageLoader(props.src)}
-            src={props.src}
+        <Image
+            loader={() => imageLoader(src)}
+            src={src}
             alt="Picture of the author"
-            width={props.width}
-            height={props.height}
-            className={props.styles}
+            width={width}
+            height={height}
+            className={styles}
         />
     )
 }

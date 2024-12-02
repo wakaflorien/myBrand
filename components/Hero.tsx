@@ -1,21 +1,36 @@
-import Image from "next/image";
 import Img, { imageLoader } from "../components/Image";
 
 import { Typography } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { ImgInterface } from "../App.types";
+import Socials from "./Socials";
 
-const Hero = () => {
+const Hero: FC = () => {
   const [imgDimensions, setImgDimensions] = useState<ImgInterface>({
     width: "400",
     height: "450",
   });
 
+  const handleResize = useCallback(() => {
+    const newDimensions = {
+      width: window.innerWidth < 960 ? "200" : "400",
+      height: window.innerWidth < 960 ? "200" : "450"
+    };
+
+    if (newDimensions.width !== imgDimensions.width ||
+      newDimensions.height !== imgDimensions.height) {
+      setImgDimensions(newDimensions);
+    }
+  }, [imgDimensions]);
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      window.innerWidth < 960 && setImgDimensions({ width: "200", height: "200" });
-    });
-  }, []);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
 
   const src = "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fnewme.jpg?alt=media&token=19ac8be5-fee0-4b9c-b959-efe0faedb63f";
 
@@ -32,16 +47,18 @@ const Hero = () => {
           styles="object-cover rounded-full"
         />
       </div>
-      <div className="flex flex-col">
-        <Typography className="text-primary font-bold text-2xl lg:text-3xl lg:py-2 text-center">
+      <div className="flex flex-col items-center lg:items-start">
+        <Typography className="text-primary font-semibold text-2xl lg:text-3xl lg:py-2">
           Florien Niyongabo
         </Typography>
-        <Typography className="text-black font-bold text-lg lg:text-xl py-2 text-center">
+        <Typography className="text-black font-normal text-lg lg:text-xl py-2 uppercase">
           Software Engineer
         </Typography>
-        <Typography className="text-black text-center text-md lg:text-xl">
-          I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at its best.
+        <Typography className="text-black text-md lg:text-xl">
+          I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at it’s best.
         </Typography>
+
+        <Socials hasMore={true} color={"text-primary"} />
       </div>
     </div>
   );
