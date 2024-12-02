@@ -7,10 +7,12 @@ import { ThemeContext } from '../utils/Contexts'
 const Skills: FC = () => {
     const theme = useContext(ThemeContext)
     return (
-        <>
-            <Typography className={`text-center text-black font-bold text-2xl py-4 ${theme === "dark" && "!text-white"}`}>
+        <div className='pt-4 lg:pt-6 '>
+            <Typography className={`text-center text-black font-bold text-2xl ${theme === "dark" && "!text-white"}`}>
                 Skills / Tools
             </Typography>
+            <div>
+
             <div className="relative flex items-center justify-center overflow-x-hidden text-black">
                 <div className="py-12 animate-marquee whitespace-nowrap">
                     <div className={`flex text-primary ${theme === "dark" && "!text-primary/70"}`}>
@@ -59,7 +61,8 @@ const Skills: FC = () => {
                     </div>
                 </div>
             </div>
-        </>
+            </div>
+        </div>
     )
 }
 

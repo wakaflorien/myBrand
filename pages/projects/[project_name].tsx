@@ -34,7 +34,7 @@ const Blog = () => {
       <main className="max-w-screen-2xl mx-auto space-y-4 lg:space-y-12">
         <Nav toggleTheme={() => toggleTheme()} />
           
-        <main className="">
+        <main className="mx-4 lg:mx-0">
           <div
             className={`flex items-center gap-2 text-black px-2 lg:px-4 cursor-pointer hover:text-primary ${theme === "dark" && "!text-white"}`}
             onClick={() => router.push("/#portifolio")}
@@ -53,13 +53,13 @@ const Blog = () => {
 
               <Typography
                 variant="medium"
-                className={`font-normal text-md lg:text-lg text-black ${theme === "dark" && "!text-white"}`}
+                className={`font-normal text-lg text-black ${theme === "dark" && "!text-white"}`}
               >
                 {item.summary}
               </Typography>
               <Typography
                 variant="medium"
-                className={`flex items-center space-x-2 font-normal text-black hover:text-primary  text-md lg:text-lg ${theme === "dark" && "!text-white"}`}
+                className={`flex items-center space-x-2 font-normal text-black hover:text-primary  text-lg ${theme === "dark" && "!text-white"}`}
               >
                 <Link href={item.link} passHref>
                   <a target="_blank" rel="noopener noreferrer">
@@ -77,6 +77,7 @@ const Blog = () => {
                   height="500"
                   styles="rounded-md shadow-md object-cover"
                 />
+                
                 {item.isPrivate ? (<Popover placement="bottom">
                   <PopoverHandler>
                     <Button variant="outlined" color="green" className="lg:ml-4 rounded-full capitalize text-primary">View the source code</Button>
@@ -97,22 +98,22 @@ const Blog = () => {
                   <Typography
                     as="p"
                     variant="small"
-                    className="py-1.5 font-normal text-md lg:text-lg"
+                    className="py-1.5 font-normal text-lg lg:text-xl"
                   >
                     <strong>Timeline</strong>{" "}{":"}{" "} {item.timeline}
                   </Typography>
                   <Typography
-                    className="py-1.5 font-normal text-md lg:text-lg"
+                    className="py-1.5 font-normal text-lg lg:text-xl"
                   >
                     <strong>Role</strong>{" "}{":"}{" "} {item.role}
                   </Typography>
                   <Typography
-                    className="py-1.5 font-normal text-md lg:text-lg"
+                    className="py-1.5 font-normal text-lg lg:text-xl"
                   >
                     <strong>Stack</strong>{" "}{":"}{" "} {item.stack}
                   </Typography>
                   <Typography
-                    className="py-1.5 font-normal text-md lg:text-lg"
+                    className="py-1.5 font-normal text-lg lg:text-xl"
                   >
                     <strong>Project description</strong>{" "}{":"}{" "} {item.description}
                   </Typography>

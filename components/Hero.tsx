@@ -2,16 +2,24 @@ import Img, { imageLoader } from "../components/Image";
 
 import { Typography } from "@material-tailwind/react";
 import { FC, useCallback, useContext, useEffect, useState } from "react";
-import { ImgInterface } from "../App.types";
+import { ImgDimensions } from "../App.types";
 import Socials from "./Socials";
 import { ThemeContext } from "../utils/Contexts";
 
 const Hero: FC = () => {
   const theme = useContext(ThemeContext)
-  const [imgDimensions, setImgDimensions] = useState<ImgInterface>({
+  const [imgDimensions, setImgDimensions] = useState<ImgDimensions>({
     width: "400",
-    height: "450",
+    height: "450"
   });
+
+  useEffect(() => {
+    const initialDimensions = {
+      width: window.innerWidth < 960 ? "200" : "400",
+      height: window.innerWidth < 960 ? "200" : "450"
+    };
+    setImgDimensions(initialDimensions);
+  }, []);
 
   const handleResize = useCallback(() => {
     const newDimensions = {
@@ -49,14 +57,14 @@ const Hero: FC = () => {
           styles="object-cover rounded-full"
         />
       </div>
-      <div className="flex flex-col items-center lg:items-start">
-        <Typography className="text-primary font-semibold text-2xl lg:text-3xl lg:py-2">
+      <div className="flex flex-col items-center lg:items-start gap-2">
+        <Typography className="text-primary font-semibold text-2xl lg:text-3xl ">
           Florien Niyongabo
         </Typography>
-        <Typography className={`text-black font-normal text-lg lg:text-xl py-2 uppercase ${theme === "dark" && "!text-white"}`}>
+        <Typography className={`text-black font-normal text-lg lg:text-xl  uppercase ${theme === "dark" && "!text-white"}`}>
           Software Engineer
         </Typography>
-        <Typography className={`text-black text-md lg:text-xl ${theme === "dark" && "!text-white"}`}>
+        <Typography className={`text-black text-center lg:text-left text-lg lg:text-xl ${theme === "dark" && "!text-white"}`}>
           I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at it’s best.
         </Typography>
 

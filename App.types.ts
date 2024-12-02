@@ -13,7 +13,7 @@ export interface myJson {
   repo: string;
 }
 
-export type ImgInterface = {
+export type ImgDimensions = {
   width: string;
   height: string;
 };

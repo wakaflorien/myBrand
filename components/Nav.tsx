@@ -46,7 +46,7 @@ const Nav: FC<NavTypes> = ({ toggleTheme }) => {
       </Typography>
       <IconButton
         variant="text"
-        className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent "
+        className="ml-0 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent "
         ripple={false}
         onClick={toggleTheme}
       >

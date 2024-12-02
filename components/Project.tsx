@@ -17,20 +17,20 @@ const Project = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-between"
+        className="flex flex-col justify-between py-4"
         id="portifolio"
       >
         <div>
-          <Typography className={`text-center font-bold text-2xl py-8 lg:py-4 text-black ${theme === "dark" && "!text-white"}`}>
+          <Typography className={`text-center font-bold text-2xl py-4 lg:py-6 text-black ${theme === "dark" && "!text-white"}`}>
             Recent work
           </Typography>
         </div>
 
-        <div className="w-full flex flex-wrap items-center justify-center gap-10 rounded-xl cursor-pointer ">
+        <div className="w-full flex flex-wrap items-center justify-center gap-2 lg:gap-4 rounded-xl cursor-pointer ">
           {cardData.map(({ id, image, title, owner }) => {
             return (
               <Link href={`/projects/${title}`} className="text-primary" key={id}>
-                <div className="p-4 text-black space-y-4" >
+                <div className="p-4 text-black space-y-4 border border-primary/10 rounded-md" >
                   <Img
                     src={image}
                     width="300"

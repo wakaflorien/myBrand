@@ -8,7 +8,7 @@ import { ThemeContext } from '../utils/Contexts'
 const Socials: FC<SocialsTypes> = ({ hasMore, color }) => {
     const theme = useContext(ThemeContext)
     return (
-        <div className="space-y-2 lg:space-y-4 py-2">
+        <div className="flex flex-col items-center lg:items-start space-y-4 lg:space-y-6 py-2 ">
 
             <div className="flex space-x-4">
                 <Link href="https://www.linkedin.com/in/florien-niyongabo-7b7971142/" passHref>
