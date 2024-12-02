@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Json from "../utils/projects.json";
 import { Typography } from "@material-tailwind/react";
 import Img from "./Image";
 import { myJson } from "../App.types";
 import Link from "next/link";
+import { ThemeContext } from "../utils/Contexts";
 
 
 const Project = () => {
+  const theme = useContext(ThemeContext)
   const [cardData, setCardData] = useState<myJson[]>([]);
   useEffect(() => {
     setCardData(Json);
@@ -19,8 +21,8 @@ const Project = () => {
         id="portifolio"
       >
         <div>
-          <Typography className="text-center text-black font-bold text-2xl py-8 lg:py-4">
-            What i have worked on ?
+          <Typography className={`text-center font-bold text-2xl py-8 lg:py-4 text-black ${theme === "dark" && "!text-white"}`}>
+            Recent work
           </Typography>
         </div>
 
@@ -36,12 +38,9 @@ const Project = () => {
                     styles="rounded-md object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
                   />
                   <div className="flex flex-col">
-                    <h1 className="text-sm lg:text-xl text-primary">
+                    <h1 className={`text-sm lg:text-xl text-primary`}>
                       {title}
                     </h1>
-                    <h2 className="text-xs lg:text-lg cursor-pointer hover:text-primary">
-                      {owner}
-                    </h2>
                   </div>
                 </div>
               </Link>

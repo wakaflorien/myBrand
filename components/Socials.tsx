@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react'
 import { Button } from '@material-tailwind/react'
 import Link from 'next/link'
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { SocialsTypes } from '../App.types'
+import { ThemeContext } from '../utils/Contexts'
 
 const Socials: FC<SocialsTypes> = ({ hasMore, color }) => {
+    const theme = useContext(ThemeContext)
     return (
         <div className="space-y-2 lg:space-y-4 py-2">
 
@@ -33,7 +35,7 @@ const Socials: FC<SocialsTypes> = ({ hasMore, color }) => {
 
             {hasMore && (<Button
                 variant="filled"
-                className="w-fit bg-primary shadow-secondary hover:shadow-md my-2 font-normal text-white text-md lg:text-xl normal-case"
+                className={`w-fit bg-primary shadow-none hover:shadow-none my-2 font-normal text-white text-md lg:text-xl normal-case ${theme === "dark" && "!bg-primary/20"}`}
                 onClick={() => window.open("https://wa.me/250786461106")}
             >
                 {" "}Quick chat

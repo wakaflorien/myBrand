@@ -1,11 +1,13 @@
 import Img, { imageLoader } from "../components/Image";
 
 import { Typography } from "@material-tailwind/react";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { ImgInterface } from "../App.types";
 import Socials from "./Socials";
+import { ThemeContext } from "../utils/Contexts";
 
 const Hero: FC = () => {
+  const theme = useContext(ThemeContext)
   const [imgDimensions, setImgDimensions] = useState<ImgInterface>({
     width: "400",
     height: "450",
@@ -39,7 +41,7 @@ const Hero: FC = () => {
       id="about"
       className="flex flex-col lg:flex-row mx-auto items-center lg:justify-between gap-4 lg:gap-20 py-4 lg:py-12 px-4 lg:px-44"
     >
-      <div className="rounded-full border border-primary">
+      <div className={`rounded-full border border-primary ${theme === "dark" && "!border-white"}`}>
         <Img
           src={src}
           width={imgDimensions.width}
@@ -51,10 +53,10 @@ const Hero: FC = () => {
         <Typography className="text-primary font-semibold text-2xl lg:text-3xl lg:py-2">
           Florien Niyongabo
         </Typography>
-        <Typography className="text-black font-normal text-lg lg:text-xl py-2 uppercase">
+        <Typography className={`text-black font-normal text-lg lg:text-xl py-2 uppercase ${theme === "dark" && "!text-white"}`}>
           Software Engineer
         </Typography>
-        <Typography className="text-black text-md lg:text-xl">
+        <Typography className={`text-black text-md lg:text-xl ${theme === "dark" && "!text-white"}`}>
           I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at it’s best.
         </Typography>
 

@@ -3,12 +3,15 @@ import {
   Typography
 } from "@material-tailwind/react";
 import Socials from "./Socials";
+import { useContext } from "react";
+import { ThemeContext } from "../utils/Contexts";
 
 const Footer = () => {
+  const theme = useContext(ThemeContext)
   return (
     <footer
       id="contact"
-      className=" bg-primary  flex flex-col items-center justify-center space-y-2 lg:space-y-4 lg:h-80 w-full lg:rounded-xl lg:my-12"
+      className={`bg-primary ${theme === "dark" && "!bg-primary/10"} flex flex-col items-center justify-center space-y-2 lg:space-y-4 lg:h-80 w-full lg:rounded-xl lg:my-12`}
     >
       <Typography className="text-center text-white font-bold text-md lg:text-lg py-2">
         Contact Me

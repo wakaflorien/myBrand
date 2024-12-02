@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect, FC, useContext } from "react";
 import Link from "next/link";
 import {
   Navbar,
@@ -8,11 +8,12 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Icon } from "@iconify/react";
+import { ThemeContext } from "../utils/Contexts";
+import { NavTypes } from "../App.types";
 
-const Nav: FC = () => {
+const Nav: FC<NavTypes> = ({ toggleTheme }) => {
+  const theme = useContext(ThemeContext);
   const [openNav, setOpenNav] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -20,13 +21,8 @@ const Nav: FC = () => {
     });
   }, []);
 
-  const changeTheme = () => {
-    setIsDark(!isDark);
-    localStorage.setItem("theme", isDark ? "light" : "dark");
-  };
-
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 text-black">
+    <ul className={`mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 text-black ${theme === "dark" && "!text-white"}`}>
       <Typography
         as="li"
         variant="small"
@@ -48,33 +44,33 @@ const Nav: FC = () => {
       >
         <Link href="/#contact">Contact</Link>
       </Typography>
-      <IconButton 
+      <IconButton
         variant="text"
         className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent "
         ripple={false}
-        onClick={changeTheme}
+        onClick={toggleTheme}
       >
-        {isDark ? (
-          <Icon icon="si:clear-day-line" width={18}   />
+        {theme === "dark" ? (
+          <Icon icon="si:clear-day-line" width={18} />
         ) : (
-          <Icon icon="mdi:weather-night" width={18}   />
+          <Icon icon="mdi:weather-night" width={18} />
         )}
       </IconButton>
     </ul>
   );
 
   return (
-    <Navbar className="bg-secondary border-none shadow-none rounded-none py-2 lg:py-4 sticky top-0 z-40">
+    <Navbar className={`bg-secondary ${theme === "dark" && "bg-darkSecondary"} border-none shadow-none rounded-none py-2 lg:py-4 sticky top-0 z-40`}>
       <div className="container flex items-center justify-between">
         <Typography
           as="li"
           variant="small"
-          className="mr-4 cursor-pointer py-1.5 font-bold text-primary text-md lg:text-2xl"
+          className={`mr-4 cursor-pointer py-1.5 font-bold text-md lg:text-2xl text-primary`}
         >
-          <Link href="/">Florien Niyongabo</Link>
+          <Link href="/">FN</Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        
+
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"

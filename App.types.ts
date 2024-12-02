@@ -18,7 +18,10 @@ export type ImgInterface = {
   height: string;
 };
 
-export type SocialsTypes = {
+export interface SocialsTypes {
   hasMore: boolean;
-  color:  string;
-};
+  color: string;
+}
+export interface NavTypes {
+  toggleTheme: () => void;
+}
