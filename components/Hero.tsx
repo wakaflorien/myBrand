@@ -42,7 +42,7 @@ const Hero: FC = () => {
   }, [handleResize]);
 
 
-  const src = "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fnewme.jpg?alt=media&token=19ac8be5-fee0-4b9c-b959-efe0faedb63f";
+  const src = "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fmesuit1.jpg?alt=media&token=e7c93fb0-f937-414c-ae97-3097635a24bd";
 
   return (
     <div
