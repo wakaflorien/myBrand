@@ -20,6 +20,8 @@ const Img: FC<imageTypes> = ({ src, width, height, styles }) => {
             width={width}
             height={height}
             className={styles}
+            unoptimized
+            priority={false}
         />
     )
 }

@@ -22,6 +22,10 @@ export interface SocialsTypes {
   hasMore: boolean;
   color: string;
 }
-export interface NavTypes {
+
+// Define types for the context
+export type Theme = 'light' | 'dark';
+export type ThemeContextType = {
+  theme: Theme;
   toggleTheme: () => void;
-}
+};

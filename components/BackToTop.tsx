@@ -1,10 +1,10 @@
 import { Icon } from '@iconify/react';
 import { Button } from '@material-tailwind/react';
-import React, { useState, useEffect, FC, useContext } from 'react';
-import { ThemeContext } from '../utils/Contexts';
+import React, { useState, useEffect, FC } from 'react';
+import { useTheme } from './ThemeProvider';
 
 const BackToTop: FC = () => {
-    const theme = useContext(ThemeContext)
+    const { theme } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
 
     const toggleVisibility = () => {

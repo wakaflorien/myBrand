@@ -3,11 +3,10 @@ import {
   Typography
 } from "@material-tailwind/react";
 import Socials from "./Socials";
-import { useContext } from "react";
-import { ThemeContext } from "../utils/Contexts";
+import { useTheme } from "./ThemeProvider";
 
 const Footer = () => {
-  const theme = useContext(ThemeContext)
+  const { theme } = useTheme();
   return (
     <footer
       id="contact"

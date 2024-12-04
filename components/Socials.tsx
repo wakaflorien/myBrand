@@ -3,10 +3,10 @@ import { Button } from '@material-tailwind/react'
 import Link from 'next/link'
 import React, { FC, useContext } from 'react'
 import { SocialsTypes } from '../App.types'
-import { ThemeContext } from '../utils/Contexts'
+import {  useTheme } from './ThemeProvider'
 
 const Socials: FC<SocialsTypes> = ({ hasMore, color }) => {
-    const theme = useContext(ThemeContext)
+    const {theme} = useTheme();
     return (
         <div className="flex flex-col items-center lg:items-start space-y-4 lg:space-y-6 py-2 ">
 

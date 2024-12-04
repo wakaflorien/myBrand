@@ -4,10 +4,10 @@ import { Typography } from "@material-tailwind/react";
 import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { ImgDimensions } from "../App.types";
 import Socials from "./Socials";
-import { ThemeContext } from "../utils/Contexts";
+import { useTheme } from "./ThemeProvider";
 
 const Hero: FC = () => {
-  const theme = useContext(ThemeContext)
+  const { theme } = useTheme();
   const [imgDimensions, setImgDimensions] = useState<ImgDimensions>({
     width: "400",
     height: "450"

@@ -4,15 +4,13 @@ import {
   Navbar,
   MobileNav,
   Typography,
-  Button,
   IconButton,
 } from "@material-tailwind/react";
 import { Icon } from "@iconify/react";
-import { ThemeContext } from "../utils/Contexts";
-import { NavTypes } from "../App.types";
+import { useTheme } from "./ThemeProvider";
 
-const Nav: FC<NavTypes> = ({ toggleTheme }) => {
-  const theme = useContext(ThemeContext);
+const Nav: FC = () => {
+  const { theme, toggleTheme } = useTheme();
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {

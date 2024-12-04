@@ -2,10 +2,10 @@ import { Icon } from '@iconify/react'
 import { Typography } from '@material-tailwind/react'
 import React, { FC, useContext } from 'react'
 import { LogosReactQuery } from './CustomIcons'
-import { ThemeContext } from '../utils/Contexts'
+import { useTheme } from './ThemeProvider'
 
 const Skills: FC = () => {
-    const theme = useContext(ThemeContext)
+    const {theme} = useTheme();
     return (
         <div className='pt-4 lg:pt-6 '>
             <Typography className={`text-center text-black font-bold text-2xl ${theme === "dark" && "!text-white"}`}>

@@ -1,11 +1,10 @@
 import { FC, useContext } from "react";
 import { Typography } from "@material-tailwind/react";
-import { Icon } from "@iconify/react";
 import Skills from "./Skills";
-import { ThemeContext } from "../utils/Contexts";
+import { useTheme } from "./ThemeProvider";
 
 const About: FC = () => {
-  const theme = useContext(ThemeContext)
+  const {theme} = useTheme();
   return (
     <>
       <section className="px-4 lg:px-44">

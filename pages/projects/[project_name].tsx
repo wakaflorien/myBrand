@@ -4,7 +4,7 @@ import Img from "../../components/Image";
 
 import Nav from "../../components/Nav";
 
-import { Typography, Breadcrumbs, Button, Popover, PopoverHandler, PopoverContent } from "@material-tailwind/react";
+import { Typography, Button, Popover, PopoverHandler, PopoverContent } from "@material-tailwind/react";
 import Footer from "../../components/Footer";
 
 import projects from "../../utils/projects.json";
@@ -13,26 +13,21 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import BackToTop from "../../components/BackToTop";
 import { currentYear } from "..";
-import { ThemeContext } from "../../utils/Contexts";
+import {  useTheme } from "../../components/ThemeProvider";
 
 const Blog = () => {
+  const { theme } = useTheme();
 
   const [allProjects, setAllProjects] = useState<myJson[]>([]);
-  const [theme, setTheme] = useState('light');
   const router = useRouter();
-
-  const toggleTheme = () => {
-    theme === "dark" ? setTheme('light') : setTheme('dark')
-  }
 
   useEffect(() => {
     setAllProjects(projects);
   }, []);
   return (
-    <ThemeContext.Provider value={theme}>
     <div className={`${theme === "dark" && "bg-darkSecondary"}`}>
       <main className="max-w-screen-2xl mx-auto space-y-4 lg:space-y-12">
-        <Nav toggleTheme={() => toggleTheme()} />
+        <Nav />
           
         <main className="mx-4 lg:mx-0">
           <div
@@ -52,13 +47,13 @@ const Blog = () => {
               </h1>
 
               <Typography
-                variant="medium"
+                variant="small"
                 className={`font-normal text-lg text-black ${theme === "dark" && "!text-white"}`}
               >
                 {item.summary}
               </Typography>
               <Typography
-                variant="medium"
+                variant="small"
                 className={`flex items-center space-x-2 font-normal text-black hover:text-primary  text-lg ${theme === "dark" && "!text-white"}`}
               >
                 <Link href={item.link} passHref>
@@ -133,7 +128,6 @@ const Blog = () => {
         <BackToTop />
       </main>
     </div>
-    </ThemeContext.Provider>
   );
 };
 export default Blog;

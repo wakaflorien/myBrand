@@ -8,20 +8,15 @@ import Footer from "../components/Footer";
 import { Typography } from "@material-tailwind/react";
 import { FC, useState } from "react";
 import BackToTop from "../components/BackToTop";
-import { ThemeContext } from "../utils/Contexts";
+import { useTheme } from "../components/ThemeProvider";
 export const currentYear = () => {
   const year = new Date().getFullYear();
   return year;
 };
 const Home: FC = () => {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    theme === "dark" ? setTheme('light') : setTheme('dark')
-  }
+  const { theme } = useTheme();
 
   return (
-    <ThemeContext.Provider value={theme}>
       <div className={`${theme === "dark" && "bg-darkSecondary"}`}>
         <div className={`w-full max-w-screen-2xl mx-auto`}>
           <Head>
@@ -31,7 +26,7 @@ const Home: FC = () => {
           </Head>
 
           <main className={`space-y-4 lg:space-y-12`}>
-            <Nav toggleTheme={() => toggleTheme()} />
+            <Nav />
             <Hero />
             <About />
             <Projects />
@@ -46,7 +41,6 @@ const Home: FC = () => {
           <BackToTop />
         </div>
       </div>
-    </ThemeContext.Provider>
   );
 };
 

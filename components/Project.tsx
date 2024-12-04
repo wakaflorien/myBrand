@@ -4,11 +4,11 @@ import { Typography } from "@material-tailwind/react";
 import Img from "./Image";
 import { myJson } from "../App.types";
 import Link from "next/link";
-import { ThemeContext } from "../utils/Contexts";
+import { useTheme } from "./ThemeProvider";
 
 
 const Project = () => {
-  const theme = useContext(ThemeContext)
+  const {theme} = useTheme();
   const [cardData, setCardData] = useState<myJson[]>([]);
   useEffect(() => {
     setCardData(Json);
