@@ -9,12 +9,13 @@ import Footer from "../../components/Footer";
 
 import projects from "../../utils/projects.json";
 import { myJson } from "../../App.types";
-import { Icon } from "@iconify/react";
+import { Icon, disableCache } from "@iconify/react";
 import Link from "next/link";
 import BackToTop from "../../components/BackToTop";
 import { currentYear } from "..";
-import {  useTheme } from "../../components/ThemeProvider";
+import { useTheme } from "../../components/ThemeProvider";
 
+disableCache("all");
 const Blog = () => {
   const { theme } = useTheme();
 
@@ -28,7 +29,7 @@ const Blog = () => {
     <div className={`${theme === "dark" && "bg-darkSecondary"}`}>
       <main className="max-w-screen-2xl mx-auto space-y-4 lg:space-y-12">
         <Nav />
-          
+
         <main className="mx-4 lg:mx-0">
           <div
             className={`flex items-center gap-2 text-black px-2 lg:px-4 cursor-pointer hover:text-primary ${theme === "dark" && "!text-white"}`}
@@ -72,7 +73,7 @@ const Blog = () => {
                   height="500"
                   styles="rounded-md shadow-md object-cover"
                 />
-                
+
                 {item.isPrivate ? (<Popover placement="bottom">
                   <PopoverHandler>
                     <Button variant="outlined" color="green" className="lg:ml-4 rounded-full capitalize text-primary">View the source code</Button>

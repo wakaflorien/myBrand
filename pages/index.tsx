@@ -9,10 +9,13 @@ import { Typography } from "@material-tailwind/react";
 import { FC, useState } from "react";
 import BackToTop from "../components/BackToTop";
 import { useTheme } from "../components/ThemeProvider";
+import { disableCache } from "@iconify/react";
 export const currentYear = () => {
   const year = new Date().getFullYear();
   return year;
 };
+
+disableCache("all");
 const Home: FC = () => {
   const { theme } = useTheme();
 
