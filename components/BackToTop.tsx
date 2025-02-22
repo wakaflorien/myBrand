@@ -1,19 +1,19 @@
 import { Icon } from '@iconify/react';
 import { Button } from '@material-tailwind/react';
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, FC, useCallback } from 'react';
 import { useTheme } from './ThemeProvider';
 
 const BackToTop: FC = () => {
     const { theme } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
 
-    const toggleVisibility = () => {
-        if (window.scrollY > 300) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    };
+    const toggleVisibility = useCallback(() => {
+            if (window.scrollY > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        }, []);
 
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility);

@@ -35,7 +35,7 @@ const Project = () => {
                     src={image}
                     width="300"
                     height="300"
-                    styles="rounded-md object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
+                    styles="w-full max-w-[350px] rounded-md object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
                   />
                   <div className="flex flex-col">
                     <h1 className={`text-sm lg:text-xl text-primary`}>
