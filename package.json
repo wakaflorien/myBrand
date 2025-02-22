@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^1.2.3",
+    "motion": "^12.4.7",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -5,19 +5,56 @@ import Img from "./Image";
 import { myJson } from "../App.types";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
-
+import { motion } from "motion/react";
 
 const Project = () => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const [cardData, setCardData] = useState<myJson[]>([]);
   useEffect(() => {
     setCardData(Json);
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    },
+    hover: {
+      scale: 1.05,
+      y: -5,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    }
+  };
+
   return (
     <>
       <div
-        className="flex flex-col justify-between py-4"
+        className="flex flex-col py-4"
         id="portifolio"
       >
         <div>
@@ -26,28 +63,52 @@ const Project = () => {
           </Typography>
         </div>
 
-        <div className="w-full flex flex-wrap items-center justify-center gap-2 lg:gap-4 rounded-xl cursor-pointer ">
-          {cardData.map(({ id, image, title, owner }) => {
-            return (
-              <Link href={`/projects/${title}`} className="text-primary" key={id}>
-                <div className="p-4 text-black space-y-4 border border-primary/10 rounded-md" >
-                  <Img
-                    src={image}
-                    width="300"
-                    height="300"
-                    styles="w-full max-w-[350px] rounded-md object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
-                  />
-                  <div className="flex flex-col">
-                    <h1 className={`text-sm lg:text-xl text-primary`}>
-                      {title}
-                    </h1>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+        <motion.div
+          className="w-full p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center cursor-pointer"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {cardData.map(({ id, image, title }) => (
+            <motion.div
+              key={id}
+              variants={itemVariants}
+              whileHover="hover"
+              className="flex flex-col justify-center"
+            >
+              <div className="w-full max-w-sm rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <motion.div
+                    className="relative overflow-hidden"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Img
+                      src={image}
+                      width="300"
+                      height="200"
+                      styles="w-full rounded-none object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
+                    />
+                    <motion.div
+                      className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0"
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Link href={`/projects/${title}`}>
+                        <p className="text-white text-lg font-semibold">View Project</p>
+                      </Link>
+                    </motion.div>
+                  </motion.div>
 
-        </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-primary truncate">
+                      {title}
+                    </h3>
+                  </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
       </div>
     </>
   );
