@@ -1,76 +1,55 @@
-import Img, { imageLoader } from "../components/Image";
+'use client';
 
-import { Typography } from "@material-tailwind/react";
-import { FC, useCallback, useContext, useEffect, useState } from "react";
-import { ImgDimensions } from "../App.types";
-import Socials from "./Socials";
-import { useTheme } from "./ThemeProvider";
+import { motion } from 'motion/react';
 
-const Hero: FC = () => {
-  const { theme } = useTheme();
-  const [imgDimensions, setImgDimensions] = useState<ImgDimensions>({
-    width: "400",
-    height: "450"
-  });
-
-  useEffect(() => {
-    const initialDimensions = {
-      width: window.innerWidth < 960 ? "200" : "400",
-      height: window.innerWidth < 960 ? "200" : "450"
-    };
-    setImgDimensions(initialDimensions);
-  }, []);
-
-  const handleResize = useCallback(() => {
-    const newDimensions = {
-      width: window.innerWidth < 960 ? "200" : "400",
-      height: window.innerWidth < 960 ? "200" : "450"
-    };
-
-    if (newDimensions.width !== imgDimensions.width ||
-      newDimensions.height !== imgDimensions.height) {
-      setImgDimensions(newDimensions);
-    }
-  }, [imgDimensions]);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize]);
-
-
-  const src = "https://firebasestorage.googleapis.com/v0/b/mybrand-app-9594a.appspot.com/o/images%2Fmesuit1.jpg?alt=media&token=e7c93fb0-f937-414c-ae97-3097635a24bd";
-
+const Hero = () => {
   return (
-    <div
-      id="about"
-      className="flex flex-col lg:flex-row mx-auto items-center lg:justify-between gap-4 lg:gap-20 py-4 lg:py-12 px-4 lg:px-44"
-    >
-      <div className={`rounded-full border border-primary ${theme === "dark" && "!border-white"}`}>
-        <Img
-          src={src}
-          width={imgDimensions.width}
-          height={imgDimensions.height}
-          styles="object-cover rounded-full"
-        />
-      </div>
-      <div className="flex flex-col items-center lg:items-start gap-2">
-        <Typography className="text-primary font-semibold text-2xl lg:text-3xl ">
-          Florien Niyongabo
-        </Typography>
-        <Typography className={`text-black font-normal text-lg lg:text-xl  uppercase ${theme === "dark" && "!text-white"}`}>
-          Software Engineer
-        </Typography>
-        <Typography className={`text-black text-center lg:text-left text-lg lg:text-xl ${theme === "dark" && "!text-white"}`}>
-          I’m a software engineer passionate about building interactive web applications that empower users to engage with technology at it’s best.
-        </Typography>
+    <section className="relative min-h-[90vh] flex flex-col justify-center px-8 lg:px-24 overflow-hidden bg-background">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <Socials hasMore={true} color={"text-primary"} />
+      <div className="max-w-4xl space-y-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <span className="text-primary font-medium tracking-[0.3em] uppercase text-sm block mb-4">
+            Software Engineer & Creative Dev
+          </span>
+          <h1 className="text-6xl lg:text-9xl font-heading font-bold leading-[0.9] tracking-tighter text-slate-100">
+            Designing <br />
+            <span className="text-slate-500">Refined</span> <br />
+            Experiences.
+          </h1>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-lg lg:text-2xl text-slate-400 max-w-2xl leading-relaxed font-sans"
+        >
+          Florien Niyongabo. I build high-performance web & mobile applications that bridge the gap between complex logic and elegant human interaction.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="pt-4"
+        >
+          <a
+            href="#work"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-background font-bold rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all duration-300"
+          >
+            View Projects
+          </a>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
+
 export default Hero;

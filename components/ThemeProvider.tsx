@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { Theme, ThemeContextType } from '../App.types';
 
@@ -9,31 +11,38 @@ interface ThemeProviderProps {
 
 // Theme provider implementation
 export const DynamicThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme | null>(null);
+  const [theme, setTheme] = useState<Theme>('light');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Load theme from localStorage on mount
+    setMounted(true);
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    setTheme(savedTheme || 'light');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
   }, []);
 
   useEffect(() => {
-    if (theme !== null) {
+    if (mounted) {
       localStorage.setItem("theme", theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
-  }, [theme]);
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  if (theme === null || theme === undefined) {
-    return <div>Loading...</div>;
-  }
-
+  // Prevent hydration mismatch by rendering a consistent structure
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <div className={mounted ? '' : 'invisible'}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 };

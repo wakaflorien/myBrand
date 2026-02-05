@@ -1,16 +1,17 @@
-export interface myJson {
+export interface Project {
   id: number;
   title: string;
   owner: string;
-  description: string;
-  image: string;
-  link: string;
-  isPrivate: boolean;
   summary: string;
+  description: string;
   timeline: string;
   role: string;
   stack: string;
+  link: string;
   repo: string;
+  isPrivate: boolean;
+  image: string;
+  featured?: boolean;
 }
 
 export type ImgDimensions = {

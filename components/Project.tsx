@@ -1,116 +1,68 @@
-import { useState, useEffect, useContext } from "react";
-import Json from "../utils/projects.json";
-import { Typography } from "@material-tailwind/react";
-import Img from "./Image";
-import { myJson } from "../App.types";
-import Link from "next/link";
-import { useTheme } from "./ThemeProvider";
-import { motion } from "motion/react";
+'use client';
 
-const Project = () => {
-  const { theme } = useTheme();
-  const [cardData, setCardData] = useState<myJson[]>([]);
-  useEffect(() => {
-    setCardData(Json);
-  }, []);
+import { motion } from 'motion/react';
+import { projects } from '../data/projects';
+import Image from 'next/image';
+import Link from 'next/link';
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    },
-    hover: {
-      scale: 1.05,
-      y: -5,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10
-      }
-    }
-  };
-
+const Projects = () => {
   return (
-    <>
-      <div
-        className="flex flex-col py-4"
-        id="portifolio"
-      >
+    <section id="work" className="py-24 px-8 lg:px-24 bg-background">
+      <div className="flex justify-between items-end mb-16">
         <div>
-          <Typography className={`text-center font-bold text-2xl py-4 lg:py-6 text-black ${theme === "dark" && "!text-white"}`}>
-            Recent work
-          </Typography>
+          <span className="text-primary font-medium tracking-widest uppercase text-xs block mb-2">Portfolio</span>
+          <h2 className="text-4xl lg:text-6xl font-heading font-bold text-slate-100 italic">Selected Work</h2>
         </div>
-
-        <motion.div
-          className="w-full p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center cursor-pointer"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {cardData.map(({ id, image, title }) => (
-            <motion.div
-              key={id}
-              variants={itemVariants}
-              whileHover="hover"
-              className="flex flex-col justify-center"
-            >
-              <div className="w-full max-w-sm rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <motion.div
-                    className="relative overflow-hidden"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Img
-                      src={image}
-                      width="300"
-                      height="200"
-                      styles="w-full rounded-none object-cover shadow-lg hover:scale-95 transition-all ease-in-out duration-500"
-                    />
-                    <motion.div
-                      className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0"
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Link href={`/projects/${title}`}>
-                        <p className="text-white text-lg font-semibold">View Project</p>
-                      </Link>
-                    </motion.div>
-                  </motion.div>
-
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-primary truncate">
-                      {title}
-                    </h3>
-                  </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
+        <p className="text-slate-500 hidden lg:block text-sm max-w-[200px]">
+          Fusing technical precision with visual harmony.
+        </p>
       </div>
-    </>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className={`group flex flex-col ${index % 2 === 1 ? 'md:mt-24' : ''}`}
+          >
+            <Link href={`/projects/${project.title}`} className="block relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-surface mb-6 border border-slate-800/50 group-hover:border-primary/30 transition-colors duration-500">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />
+            </Link>
+
+            <div className="space-y-3 px-2">
+              <div className="flex justify-between items-start">
+                <h3 className="text-2xl font-heading font-bold text-slate-100 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-widest pt-2">
+                  {project.timeline}
+                </span>
+              </div>
+              <p className="text-slate-400 font-sans leading-relaxed">
+                {project.summary}
+              </p>
+              <div className="flex gap-2 pt-2">
+                {project.stack.split(',').slice(0, 3).map((tech) => (
+                  <span key={tech} className="text-[10px] uppercase tracking-widest py-1 px-3 border border-slate-800 rounded-full text-slate-500">
+                    {tech.trim()}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 };
-export default Project;
+
+export default Projects;
