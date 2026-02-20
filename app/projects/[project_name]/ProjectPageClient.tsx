@@ -30,8 +30,17 @@ function ProjectNotFound() {
     );
 }
 
+function decodeParam(value: string): string {
+    try {
+        return decodeURIComponent(value);
+    } catch {
+        return value;
+    }
+}
+
 export default function ProjectPageClient({ projectName }: { projectName: string }) {
-    const project = projects.find((item) => item.title === decodeURIComponent(projectName));
+    const decodedName = decodeParam(projectName);
+    const project = projects.find((item) => item.title === decodedName);
 
     if (!project) {
         return <ProjectNotFound />;
