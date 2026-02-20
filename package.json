@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^3.2.2",
+    "@netlify/plugin-nextjs": "^5.15.8",
     "@types/node": "25.2.0",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
