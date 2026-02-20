@@ -16,8 +16,8 @@ module.exports = {
         muted: "#64748b",      // Slate 500
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-space)", "sans-serif"],
       },
     },
   },
